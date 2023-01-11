@@ -8,15 +8,19 @@ const Projects = ({ data }) => {
       <h1>My Projects</h1>
       <br />
 
-      {data.allContentfulProject.edges.map(({ node }) => (
-        <article>
-          <Link to={`/project/${slug}`}>
+      {data.allContentfulProject.edges.map(({ node: project }) => (
+        <article key={project.id}>
+          <Link to={`/project/${project.slug}`}>
             {" "}
-            <h2>{node.title}</h2>
+            <h2>{project.title}</h2>
           </Link>
 
-          <img src={node.featuredImage.url} width="400" />
-          <p>{node.featuredImage.description}</p>
+          <img
+            src={project.featuredImage.url}
+            width="400"
+            alt={project.title}
+          />
+          <p>{project.featuredImage.description}</p>
         </article>
       ))}
     </main>
@@ -25,14 +29,13 @@ const Projects = ({ data }) => {
 
 export default Projects;
 
-export const Head = () => <title>Home Page</title>;
-
 export const query = graphql`
   query MyQuery {
     allContentfulProject {
       edges {
         node {
           title
+          slug
           featuredImage {
             description
             url
@@ -42,12 +45,3 @@ export const query = graphql`
     }
   }
 `;
-
-{
-  /* <p>Publicerat: {node.date}</p> */
-}
-{
-  /* {node.author.map(({ name }) => (
-            <p>{name}</p>
-          ))} */
-}
