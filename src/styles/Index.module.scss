@@ -1,0 +1,13 @@
+.container {
+  background-color: #d3beb7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20%;
+
+  .title {
+    color: pink;
+  }
+}

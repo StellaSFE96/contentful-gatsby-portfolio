@@ -1,29 +1,34 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
+import Layout from "../components/Layout";
+import * as style from "../styles/ProjectsPage.module.scss";
 
 const Projects = ({ data }) => {
   return (
-    <main>
-      <Link to="/">Home</Link>
-      <h1>My Projects</h1>
-      <br />
+    <Layout>
+      <main className={style.container}>
+        <Link className={style.homeButton} to="/">
+          Home
+        </Link>
+        <h1 className={style.title}>My Projects</h1>
+        <br />
 
-      {data.allContentfulProject.edges.map(({ node: project }) => (
-        <article key={project.id}>
-          <Link to={`/project/${project.slug}`}>
-            {" "}
-            <h2>{project.title}</h2>
-          </Link>
+        {data.allContentfulProject.edges.map(({ node: project }) => (
+          <article key={project.id}>
+            <Link className={style.link} to={`/project/${project.slug}`}>
+              <h2>{project.title}</h2>
+            </Link>
 
-          <img
-            src={project.featuredImage.url}
-            width="400"
-            alt={project.title}
-          />
-          <p>{project.featuredImage.description}</p>
-        </article>
-      ))}
-    </main>
+            <img
+              src={project.featuredImage.url}
+              width="400"
+              alt={project.title}
+            />
+            <p>{project.featuredImage.description}</p>
+          </article>
+        ))}
+      </main>
+    </Layout>
   );
 };
 

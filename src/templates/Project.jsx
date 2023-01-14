@@ -11,7 +11,7 @@ const ProjectPage = ({ data }) => {
       <p>{singleProject.projectDescription.projectDescription}</p>
       <p>Published: {singleProject.dateAndTime}</p>
 
-      <Link to="">Live project</Link>
+      <Link to="/">Live project</Link>
       {singleProject.contentImages.map(({ file: { url }, title }, index) => (
         <img key={index} src={url} alt={title} />
       ))}

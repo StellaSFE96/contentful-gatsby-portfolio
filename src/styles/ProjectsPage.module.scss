@@ -1,0 +1,26 @@
+.container {
+  background-color: #d3beb7;
+  margin-left: 20%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  .homeButton {
+    text-decoration: none;
+    color: azure;
+  }
+
+  .title {
+    color: rgb(135, 98, 132);
+  }
+
+  article {
+    width: 50%;
+
+    .link {
+      text-decoration: none;
+      color: azure;
+    }
+  }
+}
