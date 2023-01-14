@@ -22,9 +22,11 @@
 
     div {
       overflow: hidden;
-      border-radius: 130px;
       height: 50%;
       width: 50%;
+      box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
+      -webkit-box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
+      -moz-box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
 
       img {
         width: 100%;

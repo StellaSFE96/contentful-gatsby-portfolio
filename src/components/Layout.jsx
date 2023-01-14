@@ -7,7 +7,6 @@ function Layout({ children }) {
   console.log(children);
   return (
     <>
-      {/* <Header /> */}
       <Navbar />
       {children}
       <Footer />

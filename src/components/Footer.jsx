@@ -4,8 +4,13 @@ import * as style from "../styles/Footer.module.scss";
 function Footer() {
   return (
     <>
-      <footer className={style.footer}>
-        <h1>This is the footer</h1>
+      <footer className={style.container}>
+        <div>
+          <p>Designed and built by Stella Samaranayake</p>
+          <p>
+            All rights reserved. <span>2023</span>
+          </p>
+        </div>
       </footer>
     </>
   );
