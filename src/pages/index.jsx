@@ -1,17 +1,49 @@
 import * as React from "react";
-import { Link } from "gatsby";
-import Layout from "../components/Layout";
 import * as style from "../styles/Index.module.scss";
+import Navbar from "../components/Navbar";
+import { graphql } from "gatsby";
 
-const IndexPage = () => {
+const Index = ({
+  data: {
+    allContentfulLandingPage: {
+      nodes: [landingPageInfo],
+    },
+  },
+}) => {
   return (
-    <Layout>
+    <div>
+      <Navbar />
       <div className={style.container}>
-        <Link to="/ProjectsPage/">Projects</Link>
-        <h1 className={style.title}>Hello home</h1>
+        <aside>
+          <div data-aos="fade-down" data-aos-duration="2000">
+            <img src={landingPageInfo.profileImage.url} alt="" />
+          </div>
+        </aside>
+        <section>
+          <h1 data-aos="fade-down" data-aos-duration="2500">
+            {landingPageInfo.title}
+          </h1>
+          <p data-aos="fade-down" data-aos-duration="2200">
+            {landingPageInfo.description}
+          </p>
+        </section>
       </div>
-    </Layout>
+    </div>
   );
 };
+export default Index;
 
-export default IndexPage;
+export const landingPageQuery = graphql`
+  query MyQuery {
+    allContentfulLandingPage {
+      nodes {
+        profileImage {
+          url
+          description
+        }
+        title
+        description
+      }
+    }
+  }
+`;

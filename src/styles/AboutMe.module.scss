@@ -1,0 +1,12 @@
+.container {
+  background-color: #d3beb7;
+  margin-left: 20%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  .title {
+    color: rgb(135, 98, 132);
+  }
+}

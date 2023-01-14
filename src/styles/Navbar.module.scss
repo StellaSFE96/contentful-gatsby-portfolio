@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #735751; /* Background color */
-  // --secondary-color: #18206f; /* Text color */
-  --secondary-color: rgb(156, 204, 247); /* Text color */
+  --primary-color: #7c625c; /* Background color */
+  --secondary-color: rgb(32, 32, 32); /* Text color */
+  // --secondary-color: rgb(156, 204, 247); /* Text color */
   --logo-color: #64a6bd;
 }
 
@@ -43,9 +43,15 @@
       text-decoration: none;
       color: var(--secondary-color);
       margin-bottom: 40px;
-      font-family: "Playfair Display", serif;
+      font-family: "Playfair Display", sans-serif;
       font-weight: 700;
       font-size: 1.5em;
+      transition: color 0.4s ease-in;
+    }
+
+    .link:hover,
+    .link:active {
+      color: bisque;
     }
   }
 }
