@@ -1,0 +1,32 @@
+.container {
+  background-color: #d3beb7;
+  margin-left: 20%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .homeBtn {
+    font-family: "Open Sans", serif;
+    background-color: #665753;
+    text-decoration: none;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 15px;
+    height: 40px;
+    width: 200px;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
+    -webkit-box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
+    -moz-box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
+    border-radius: 50px;
+  }
+
+  .homeBtn:hover {
+    transform: translateY(-2mm);
+  }
+}
