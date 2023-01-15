@@ -19,3 +19,12 @@
     }
   }
 }
+
+@media only screen and (max-width: 821px) {
+}
+
+@media only screen and (min-width: 370px) and (max-width: 679px) {
+  .container {
+    margin-left: 0%;
+  }
+}

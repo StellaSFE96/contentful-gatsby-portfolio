@@ -14,7 +14,7 @@ export default function Contact() {
   const { contentfulContactPage } = useStaticQuery(query);
 
   return (
-    // Layout component use to wrap all other elements with header and footer as seen in layout.jsx
+    // A higher-order component "Layout" used to wrap all other elements with header and footer as seen in layout.jsx
     <Layout>
       <article className={style.container}>
         <div

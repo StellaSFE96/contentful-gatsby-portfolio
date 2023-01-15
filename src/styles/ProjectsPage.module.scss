@@ -7,9 +7,6 @@
   .categories {
     background-color: #c9b1a8;
     padding: 20px;
-    box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-    -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-    -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
 
     h1 {
       font-size: 20px;
@@ -35,9 +32,6 @@
           height: 30px;
           margin: 10px 15px 0px 0px;
           transition: 0.5s ease-in-out;
-          box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-          -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-          -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
         }
 
         .unselected:hover {
@@ -54,9 +48,6 @@
           height: 30px;
           margin: 10px 15px 0px 0px;
           transition: 0.5s ease-in-out;
-          box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-          -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-          -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
         }
 
         .selected:hover {
@@ -66,37 +57,20 @@
       }
     }
 
-    .unselectedAllButton {
+    .allButton {
       font-family: "Open Sans", serif;
-      background-color: #8a6057;
+      background-color: #ba7c6e;
       color: rgb(255, 242, 255);
       border: none;
       min-width: 90px;
       height: 30px;
       margin: 10px 15px 0px 0px;
       transition: 0.5s ease-in-out;
-      box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-      -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-      -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
     }
 
-    .unselectedAllButton:hover {
+    .allButton:hover {
       cursor: pointer;
       color: rgb(196, 230, 255);
-    }
-
-    .selectedAllButton {
-      font-family: "Open Sans", serif;
-      background-color: #523c38;
-      color: rgb(255, 242, 255);
-      border: none;
-      min-width: 90px;
-      height: 30px;
-      margin: 10px 15px 0px 0px;
-      transition: 0.5s ease-in-out;
-      box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-      -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
-      -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
     }
   }
 
@@ -106,13 +80,13 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: auto;
-    gap: 30px;
     padding-top: 50px;
     padding-bottom: 50px;
 
     .projectContainer {
-      max-width: 40%;
-      min-height: 380px;
+      margin: 0px 40px 20px 10px;
+      max-width: 30%;
+      height: 300px;
       background-color: #c8c8c8;
       transform: translateY(0);
       transition: transform 0.5s ease-in-out;
@@ -123,20 +97,21 @@
       .link {
         text-decoration: none;
 
-        .image {
-          width: 100%;
-          min-height: 70%;
+        .imageContainer {
+          width: 230px;
+          height: 50%;
 
           img {
-            width: 100%;
+            max-width: 100%;
+            min-height: 100%;
             object-fit: cover;
           }
         }
 
         .details {
-          width: 90%;
-          min-height: 20%;
-          padding: 20px;
+          max-width: 100%;
+          max-height: 50%;
+          padding: 40px 20px 0px 20px;
 
           h1 {
             color: rgb(32, 32, 32);
@@ -157,6 +132,171 @@
 
     article:hover {
       transform: translateY(-2mm);
+    }
+  }
+
+  .selectedAllButton,
+  .unselectedAllButton,
+  .selected,
+  .unselected,
+  .categories {
+    box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
+    -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
+    -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
+  }
+}
+
+@media only screen and (max-width: 821px) {
+  .container {
+    min-height: 100vh;
+
+    .categories {
+      .listContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px;
+
+        .listItem {
+          .unselected {
+            min-width: 100px;
+            height: 35px;
+          }
+
+          .selected {
+            min-width: 100px;
+            height: 35px;
+          }
+        }
+      }
+
+      .allButton {
+        width: 100px;
+        height: 35px;
+      }
+    }
+
+    .projects {
+      min-width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin: auto;
+      gap: 0px;
+
+      .projectContainer {
+        height: 250px;
+
+        .link {
+          .imageContainer {
+            width: 180px;
+            height: 50%;
+
+            img {
+              max-width: 100%;
+              min-height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .details {
+            max-width: 100%;
+            min-height: 50%;
+            padding: 30px 0px 0px 10px;
+
+            h1 {
+              font-size: 17px;
+            }
+
+            p {
+              padding-top: 7px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 679px) {
+  .container {
+    margin-left: 0px;
+    padding-top: 100px;
+    min-height: 80vh;
+
+    .categories {
+      h1 {
+        font-size: 13px;
+      }
+
+      .listContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0px;
+
+        .listItem {
+          .unselected {
+            min-width: 80px;
+            height: 25px;
+          }
+
+          .selected {
+            min-width: 80px;
+            height: 25px;
+          }
+        }
+      }
+
+      .allButton {
+        width: 80px;
+        height: 24px;
+      }
+    }
+
+    .projects {
+      min-width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin: auto;
+      gap: 0px;
+
+      .projectContainer {
+        width: 40%;
+        height: 140px;
+        margin: 0px 10px 15px 10px;
+
+        .link {
+          .imageContainer {
+            width: 112px;
+            height: 50%;
+
+            img {
+              min-width: 100%;
+              max-height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .details {
+            max-width: 100%;
+            max-height: 50%;
+            padding: 10px 5px 0px 5px;
+
+            h1 {
+              font-size: 11px;
+            }
+
+            p {
+              padding-top: 7px;
+              font-size: 9px;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -16,22 +16,6 @@
   top: 0;
   left: 0;
 
-  // aside {
-  //   margin: auto;
-  //   height: 20%;
-  //   display: flex;
-  //   align-items: center;
-
-  //   h1 {
-  //     text-decoration: none;
-  //     color: var(--logo-color);
-  //     margin-bottom: 40px;
-  //     font-family: "Playfair Display", serif;
-  //     font-weight: 700;
-  //     font-size: 3em;
-  //   }
-  // }
-
   nav {
     margin: auto;
     height: 70%;
@@ -60,6 +44,50 @@
 
     .link:hover {
       color: rgb(198, 196, 255);
+    }
+  }
+}
+
+@media only screen and (max-width: 821px) {
+  .container {
+    width: 20%;
+
+    nav {
+      height: 60%;
+
+      .link {
+        width: 70px;
+        font-size: 1.4em;
+        padding: 14px 28px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 679px) {
+  .container {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    nav {
+      margin: auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+
+      .link {
+        width: 60px;
+        font-size: 15px;
+        padding: 10px;
+      }
     }
   }
 }

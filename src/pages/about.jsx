@@ -12,7 +12,7 @@ export default function About() {
   } = useStaticQuery(query);
 
   return (
-    // Layout component use to wrap all other elements with header and footer as seen in layout.jsx
+    // A higher-order component "Layout" used to wrap all other elements with header and footer as seen in layout.jsx
     <Layout>
       <article className={style.container}>
         {/* aside displaying title and description for the about me page */}
