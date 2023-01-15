@@ -1,52 +1,40 @@
 import * as React from "react";
 import * as style from "../styles/Project.module.scss";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
-// import Icon from "../assets/arrow.svg";
 
-const ProjectPage = ({ data }) => {
-  const singleProject = data.contentfulProject;
+export default function ProjectPage() {
+  // using useStaticQuery hook to retrieve data from GraphQL at build time
+  const { contentfulProject } = useStaticQuery(query);
   return (
+    // Layout component use to wrap all other elements with header and footer as seen in layout.jsx
     <Layout>
       <main className={style.container}>
         <section>
           <aside>
-            <h1>{singleProject.title}</h1>
+            <h1>{contentfulProject.title}</h1>
 
-            <a href={singleProject.link} target="_blank" rel="noreferrer">
+            <a href={contentfulProject.link} target="_blank" rel="noreferrer">
               Live project
-              {/* <span>
-                <Icon />;
-              </span> */}
             </a>
           </aside>
-          {/* <p>{singleProject.projectDescription.projectDescription}</p> */}
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis,
-            nam non. Nam nesciunt atque saepe ad ullam culpa ipsum, dolorum aut
-            reiciendis sint blanditiis, iusto sit officia minima id quod nemo,
-            sunt hic? Architecto optio, ea dolores alias necessitatibus
-            molestiae doloribus quae reiciendis dolorum ipsum ducimus similique
-            aut saepe sint?
-          </p>
+          <p>{contentfulProject.projectDescription.projectDescription}</p>
         </section>
 
         <article>
-          {singleProject.contentImages.map(
-            ({ file: { url }, title }, index) => (
-              <img key={index} src={url} alt={title} />
-            )
-          )}
+          {/* map function displaying project images */}
+          {contentfulProject.contentImages.map((image) => (
+            <img key={image.index} src={image.url} alt={image.description} />
+          ))}
         </article>
       </main>
     </Layout>
   );
-};
+}
 
-export default ProjectPage;
+// export const Head = () => <title>Projects</title>;
 
-export const Head = () => <title>Projectsss</title>;
-
+// GraphQl query for project information
 export const query = graphql`
   query singleProjectQuery($slug: String) {
     contentfulProject(slug: { eq: $slug }) {
@@ -56,11 +44,8 @@ export const query = graphql`
         projectDescription
       }
       contentImages {
-        title
-        file {
-          url
-          contentType
-        }
+        url
+        description
       }
     }
   }

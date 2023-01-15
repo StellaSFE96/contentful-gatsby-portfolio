@@ -29,7 +29,9 @@
         color: rgb(32, 32, 32);
         text-decoration: none;
         align-self: center;
+        text-align: center;
         border: black solid 1px;
+        width: 100px;
         padding: 5px;
         transition: 0.5s ease-in-out;
         box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
@@ -42,8 +44,7 @@
       }
 
       a:hover {
-        // border-radius: 8px;
-        background-color: rgb(255, 230, 215);
+        background-color: rgb(198, 196, 255);
       }
     }
 

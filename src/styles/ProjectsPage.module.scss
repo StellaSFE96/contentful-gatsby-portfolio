@@ -11,7 +11,9 @@
     h1 {
       font-size: 20px;
       padding: 20px 20px 10px;
-      font-family: "Playfair Display", sans-serif;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      // font-family: "Playfair Display", sans-serif;
     }
 
     .listContainer {
@@ -24,19 +26,21 @@
 
         button {
           font-family: "Open Sans", serif;
-          border: black solid 1px;
+          background-color: #8a6057;
+          color: rgb(255, 242, 255);
+          border: none;
           min-width: 90px;
           height: 30px;
           margin: 10px 15px 0px 0px;
           transition: 0.5s ease-in-out;
-          box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
-          -webkit-box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
-          -moz-box-shadow: 10px 10px 17px -11px rgba(140, 121, 121, 0.75);
+          box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
+          -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
+          -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
         }
 
         button:hover {
           cursor: pointer;
-          background-color: rgb(255, 230, 215);
+          color: rgb(198, 196, 255);
         }
       }
     }
@@ -76,8 +80,8 @@
         }
 
         .details {
-          width: 100%;
-          min-height: 30%;
+          width: 90%;
+          min-height: 20%;
           padding: 20px;
 
           h1 {

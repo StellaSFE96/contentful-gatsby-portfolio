@@ -7,6 +7,7 @@ const Projects = ({ data }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   return (
+    // Layout component use to wrap all other elements with header and footer as seen in layout.jsx
     <Layout>
       <main className={style.container}>
         <div className={style.categories}>
@@ -28,17 +29,14 @@ const Projects = ({ data }) => {
                 !selectedCategory ||
                 node.referenceToCategory.title === selectedCategory
             )
-
             .map(({ node: project }) => (
               <article key={project.id} className={style.projectContainer}>
                 <Link className={style.link} to={`/project/${project.slug}`}>
                   <div className={style.image}>
                     <img src={project.featuredImage.url} alt={project.title} />
                   </div>
-
                   <div className={style.details}>
                     <h1>{project.title}</h1>
-
                     <p>{project.featuredImage.description}</p>
                   </div>
                 </Link>
@@ -52,8 +50,9 @@ const Projects = ({ data }) => {
 
 export default Projects;
 
+// GraphQl query for Project page information and categories
 export const query = graphql`
-  query MyQuery {
+  query ProjectQuery {
     allContentfulProject {
       edges {
         node {

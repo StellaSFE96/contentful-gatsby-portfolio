@@ -1,17 +1,18 @@
 import * as React from "react";
-import { Link } from "gatsby";
-import Layout from "../components/Layout";
 import * as style from "../styles/Redirect.module.scss";
+import Layout from "../components/Layout";
+import { Link } from "gatsby";
 
 const NotFound = () => {
   return (
+    // Layout component use to wrap all other elements with header and footer as seen in layout.jsx
     <Layout>
-      <div className={style.container}>
+      <article className={style.container}>
         <h1>Oops! Page not found.</h1>
-        <Link className={style.homeBtn} to="/">
+        <Link className={style.homeButton} to="/">
           Go back...
         </Link>
-      </div>
+      </article>
     </Layout>
   );
 };

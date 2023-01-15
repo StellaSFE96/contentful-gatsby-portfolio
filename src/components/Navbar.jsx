@@ -4,6 +4,7 @@ import * as style from "../styles/Navbar.module.scss";
 import "aos/dist/aos.css";
 
 export default function Navbar() {
+  // AOS animation library used in several components
   let AOS;
 
   useEffect(() => {
@@ -22,11 +23,13 @@ export default function Navbar() {
 
   return (
     <div className={style.container}>
-      <aside>{/* <h1>SS</h1> */}</aside>
+      {/* space for logo as per preference */}
+      <aside>{/* <h1>logo</h1> */}</aside>
+
       <nav>
         <Link
           activeStyle={{
-            color: "white",
+            color: "rgb(198, 196, 255)",
             fontWeight: 700,
           }}
           className={style.link}
@@ -36,7 +39,7 @@ export default function Navbar() {
         </Link>
         <Link
           activeStyle={{
-            color: "white",
+            color: "rgb(198, 196, 255)",
             fontWeight: 700,
           }}
           className={style.link}
@@ -46,7 +49,7 @@ export default function Navbar() {
         </Link>
         <Link
           activeStyle={{
-            color: "white",
+            color: "rgb(198, 196, 255)",
             fontWeight: 700,
           }}
           className={style.link}
@@ -56,7 +59,7 @@ export default function Navbar() {
         </Link>
         <Link
           activeStyle={{
-            color: "white",
+            color: "rgb(198, 196, 255)",
             fontWeight: 700,
           }}
           className={style.link}

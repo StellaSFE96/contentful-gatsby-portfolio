@@ -7,8 +7,12 @@
   flex-direction: column;
 
   aside {
-    padding: 50px 50px 10px;
-    width: 70%;
+    max-width: 100%;
+    background-color: #c9b1a8;
+    padding: 40px 100px 50px 40px;
+    box-shadow: 10px 10px 30px 10px rgba(140, 121, 121, 0.75);
+    -webkit-box-shadow: 10px 10px 30px -11px rgba(140, 121, 121, 0.75);
+    -moz-box-shadow: 10px 10px 30px -11px rgba(140, 121, 121, 0.75);
 
     h1 {
       font-size: 20px;
@@ -19,7 +23,7 @@
     p {
       margin: 10px 15px 0px 20px;
       font-family: "Open Sans", serif;
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 
@@ -52,10 +56,12 @@
           display: flex;
           flex-direction: column;
           margin-bottom: 10px;
+          background-color: #e1d2cc;
+          padding: 10px;
 
           div {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             padding-bottom: 5px;
 
@@ -63,15 +69,28 @@
               color: rgb(32, 32, 32);
               font-family: "Source Sans Pro", sans-serif;
               font-size: 16px;
-              margin-right: 10px;
             }
 
             h2 {
               color: rgb(32, 32, 32);
               font-family: "Source Sans Pro", sans-serif;
-              font-size: 12px;
+              font-size: 13px;
               font-weight: 400;
             }
+
+            hr {
+              border: #d3beb7;
+              border-top: 1.5px dotted rgb(255, 240, 240);
+              width: 20%;
+            }
+          }
+
+          h3 {
+            font-family: "Open Sans", serif;
+            color: rgb(32, 32, 32);
+            padding-bottom: 5px;
+            font-size: 13px;
+            font-weight: 400;
           }
 
           p {
@@ -110,6 +129,8 @@
           display: flex;
           flex-direction: column;
           margin-bottom: 10px;
+          background-color: #e1d2cc;
+          padding: 10px;
 
           div {
             display: flex;
@@ -120,13 +141,13 @@
             h1 {
               color: rgb(32, 32, 32);
               font-family: "Source Sans Pro", sans-serif;
-              font-size: 15px;
+              font-size: 16px;
             }
 
             h2 {
               color: rgb(32, 32, 32);
               font-family: "Source Sans Pro", sans-serif;
-              font-size: 12px;
+              font-size: 13px;
               font-weight: 400;
             }
 
@@ -135,6 +156,14 @@
               border-top: 1.5px dotted rgb(255, 240, 240);
               width: 20%;
             }
+          }
+
+          h3 {
+            font-family: "Open Sans", serif;
+            color: rgb(32, 32, 32);
+            padding-bottom: 5px;
+            font-size: 13px;
+            font-weight: 400;
           }
 
           p {
