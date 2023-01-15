@@ -58,10 +58,15 @@
           -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
           -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
         }
+
+        .selected:hover {
+          cursor: pointer;
+          color: rgb(255, 242, 255);
+        }
       }
     }
 
-    .allButton {
+    .unselectedAllButton {
       font-family: "Open Sans", serif;
       background-color: #8a6057;
       color: rgb(255, 242, 255);
@@ -75,9 +80,23 @@
       -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
     }
 
-    .allButton:hover {
+    .unselectedAllButton:hover {
       cursor: pointer;
       color: rgb(196, 230, 255);
+    }
+
+    .selectedAllButton {
+      font-family: "Open Sans", serif;
+      background-color: #523c38;
+      color: rgb(255, 242, 255);
+      border: none;
+      min-width: 90px;
+      height: 30px;
+      margin: 10px 15px 0px 0px;
+      transition: 0.5s ease-in-out;
+      box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
+      -webkit-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
+      -moz-box-shadow: 10px 10px 17px -11px rgba(46, 46, 46, 0.75);
     }
   }
 
