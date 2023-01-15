@@ -1,3 +1,9 @@
+// support for .env, .env.development and .env.production
+require("dotenv").config();
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -29,8 +35,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "fndrpWABL2nnj3nQrJ97YhYE2e-j_b9Nqxz1HkIbCU8",
-        spaceId: "uh1onyiqv14a",
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: process.env.SPACE_ID,
       },
     },
     "gatsby-plugin-image",

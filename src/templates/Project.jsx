@@ -3,9 +3,13 @@ import * as style from "../styles/Project.module.scss";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
 
-export default function ProjectPage() {
+export default function Project({ pageContext }) {
   // using useStaticQuery hook to retrieve data from GraphQL at build time
-  const { contentfulProject } = useStaticQuery(query);
+  const { contentfulProject } = useStaticQuery(query, {
+    variables: {
+      slug: pageContext.slug,
+    },
+  });
   return (
     // Layout component use to wrap all other elements with header and footer as seen in layout.jsx
     <Layout>
@@ -32,9 +36,8 @@ export default function ProjectPage() {
   );
 }
 
-// export const Head = () => <title>Projects</title>;
-
 // GraphQl query for project information
+
 export const query = graphql`
   query singleProjectQuery($slug: String) {
     contentfulProject(slug: { eq: $slug }) {
@@ -50,3 +53,18 @@ export const query = graphql`
     }
   }
 `;
+// export const query = graphql`
+//   query singleProjectQuery($slug: String) {
+//     contentfulProject(slug: { eq: $slug }) {
+//       title
+//       link
+//       projectDescription {
+//         projectDescription
+//       }
+//       contentImages {
+//         url
+//         description
+//       }
+//     }
+//   }
+// `;
