@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import * as style from "../styles/ProjectsPage.module.scss";
 
-const Projects = () => {
+const Projects = ({ data }) => {
   // the useState hook is used to create a selectedCategory state variable and a setSelectedCategory function. This is initially set to null.
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // The useStaticQuery hook is then used to fetch data from Contentful using the query defined at the bottom of the file.
-
   //The hook returns an object with allContentfulProject and allContentfulCategory properties.
-  const { allContentfulProject, allContentfulCategory } = useStaticQuery(query);
+  const project = data.allContentfulProject.edges;
 
   return (
     <Layout>
@@ -22,7 +20,7 @@ const Projects = () => {
 
           <ul className={style.listContainer}>
             {/* The list of categories is mapped over the edges of allContentfulCategory.*/}
-            {allContentfulCategory.edges.map(({ node }) => (
+            {data.allContentfulCategory.edges.map(({ node }) => (
               <li className={style.listItem} key={node.title}>
                 {/* For each node, a list item is rendered containing a button that has a title of the node and a onClick event. */}
                 <button
@@ -51,7 +49,7 @@ const Projects = () => {
 
         {/* The projects section displays a list of projects, filtered by the selected category, if any. */}
         <div className={style.projects}>
-          {allContentfulProject.edges
+          {project
             .filter(
               ({ node }) =>
                 !selectedCategory ||
